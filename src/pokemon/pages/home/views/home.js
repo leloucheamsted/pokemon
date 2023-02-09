@@ -27,17 +27,19 @@ export default function Home() {
             setIsLoading(true)
             return setTimeout(resolve, milliseconds)
         });
+        setIsLoading(false)
+        setIsCompleted(false)
     };
 
     const loadMore = async () => {
         console.log("load mor !!!")
-        // setIsCompleted(true)
+        setIsCompleted(true)
         await sleep()
         setIndex(index + 8)
         console.log(index)
 
         if (index >= pokemons.length) {
-            //setIsLoading(false)
+
         } else {
             //setIsCompleted(false)
             // setIsLoading(false)
